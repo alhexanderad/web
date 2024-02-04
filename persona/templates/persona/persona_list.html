@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 class="text-center">LISTA PERSONAS</h1>
+
+<div class="container">
+  <div class="row">
+
+
+    <table class="table table-striped">
+      <thead>
+        <tr class="text-center">
+          <th scope="col">N°</th>
+          <th scope="col">Nombres</th>
+          <th scope="col">Apellidos</th>
+          <th scope="col">DNI</th>
+          <th scope="col">Email</th>
+          <th scope="col">Generar</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for persona in object_list %}
+        <tr class="text-center">
+          <th scope="row">{{ persona.id }}</th>
+          <td>{{ persona.nombres }}</td>
+          <td>{{ persona.apellidos }}</td>
+          <td>{{ persona.dni }}</td>
+          <td>{{ persona.correo }}</td>
+          <td><button type="button" class="btn btn-success btn-sm">PDF</button></td>
+        </tr>
+        {% empty %}
+        <tr>
+          <td colspan="6">No hay persona disponibles.</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+
+  </div>
+</div>
+{% endblock %}
