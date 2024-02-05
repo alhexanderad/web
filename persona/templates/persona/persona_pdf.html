@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<style>
+  @page {
+    size: A4 landscape;
+    /* Puedes ajustar el tamaño según tus necesidades */
+  }
+
+
+
+  .pdf-titulo {
+    color: #007BFF;
+    text-align: center;
+    font-size: 24px;
+  }
+
+  .logo1{
+    padding-top: 20px;
+    padding-left: 150px;
+  }
+  .logo2{
+    padding-left: 50px;
+  }
+  .pdf-text{
+    color:red;
+    text-align: center;
+    font-size: 32px;
+  }
+</style>
+
+  <table class="table">
+    <tbody>
+    <tr>
+      <td> 
+        <div class="logo1"><img src="{{imagen.logo.path}}" height="250px" width="250px"></div>
+      </td>
+      <td><h1 class="pdf-titulo">CERTIFICADO</h1></td>
+      <td><div class="logo2"><img src="{{psicologia.logo.path}}" height="170px" width="170px"></div></td>
+    </tr>
+    </tbody>
+  </table>
+<div class="pdf-text"> {{ myvar }} </div>
+<div class="">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus ut tenetur voluptate ullam earum sequi dolor mollitia eius sit similique voluptatem accusamus, perferendis veniam aperiam assumenda enim natus sunt dicta voluptas quaerat. Sapiente similique quam, accusamus quia quos perferendis nulla perspiciatis, nisi quae aspernatur eos dicta. Aut error tempora nesciunt!</div>
+{% endblock %}

@@ -12,4 +12,11 @@ class Persona(models.Model):
   def __str__(self):
     return f"{self.dni} - {self.apellidos}" 
   
+class Sello(models.Model):
   
+  nombre = models.CharField(max_length=150)
+  logo = models.ImageField(upload_to='logo/')
+  
+  def __str__(self):
+    return f"{self.nombre}"
+	
