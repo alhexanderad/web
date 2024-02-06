@@ -2,41 +2,36 @@
 
 {% block content %}
 
-<h1 class="text-center">LISTA PERSONAS</h1>
+<h1 class="text-center">LISTA CERTIFICADO</h1>
 
 <div class="container">
   <div class="row">
-
+    <p> Nombres y Apellidos:{{ persona.nombres }}, {{ persona.apellidos }} </p>
+    <p>Numero de DNI: {{persona.dni}} </p>
 
     <table class="table table-striped">
       <thead>
         <tr class="text-center">
           <th scope="col">N°</th>
-          <th scope="col">Nombres</th>
-          <th scope="col">Apellidos</th>
-          <th scope="col">DNI</th>
-          <th scope="col">Email</th>
-          <th scope="col">Slug</th>
+          <th scope="col">Codigo</th>
+          <th scope="col">Curso</th>
+          <th scope="col">Fecha de Emision</th>
           <th scope="col">Generar</th>
         </tr>
       </thead>
 
       <tbody>
-        {% for persona in object_list %}
+
         <tr class="text-center">
           <th scope="row">{{ persona.id }}</th>
-          <td>{{ persona.nombres }}</td>
-          <td>{{ persona.apellidos }}</td>
-          <td>{{ persona.dni }}</td>
-          <td>{{ persona.correo }}</td>
-          <td> {{ persona.slug }} </td>
+          <td> {{ persona.n_certificado }} </td>
+          <td>{{ persona.curso }}</td>
+          <td>{{ persona.fecha_emision }}</td>
+
           <td><button type="button" class="btn btn-success btn-sm"onclick="window.location='{% url 'persona:pdf' persona.n_certificado %}'">PDF</button></td>
         </tr>
-        {% empty %}
-        <tr>
-          <td colspan="6">No hay persona disponibles.</td>
-        </tr>
-        {% endfor %}
+
+
       </tbody>
     </table>
 

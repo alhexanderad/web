@@ -11,6 +11,7 @@
 
 
   .pdf-titulo {
+    padding-top: 120px;
     color: #007BFF;
     text-align: center;
     font-size: 24px;
@@ -24,9 +25,9 @@
     padding-left: 50px;
   }
   .pdf-text{
-    color:red;
+    color:rgb(15, 15, 15);
     text-align: center;
-    font-size: 32px;
+    font-size: 24px;
   }
 </style>
 
@@ -34,13 +35,23 @@
     <tbody>
     <tr>
       <td> 
-        <div class="logo1"><img src="{{imagen.logo.path}}" height="250px" width="250px"></div>
+        <div class="logo1"><img src="" height="250px" width="250px"></div>
       </td>
       <td><h1 class="pdf-titulo">CERTIFICADO</h1></td>
-      <td><div class="logo2"><img src="{{psicologia.logo.path}}" height="170px" width="170px"></div></td>
+      <td><div class="logo2"><img src="" height="170px" width="170px"></div></td>
     </tr>
     </tbody>
   </table>
-<div class="pdf-text"> {{ myvar }} </div>
-<div class="">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus ut tenetur voluptate ullam earum sequi dolor mollitia eius sit similique voluptatem accusamus, perferendis veniam aperiam assumenda enim natus sunt dicta voluptas quaerat. Sapiente similique quam, accusamus quia quos perferendis nulla perspiciatis, nisi quae aspernatur eos dicta. Aut error tempora nesciunt!</div>
+  <div class="pdf-text"> 
+    <p>Nombres y Apellidos: {{persona.nombres}}, {{persona.apellidos}} </p>    
+
+    <p>Curso: {{persona.curso}} </p>
+
+    <p>N°: {{persona.n_certificado}} </p>
+
+    <p>Fecha: {{persona.fecha_emision}} </p>
+    <!-- Mostrar el código QR -->
+    <img src="{{ qr_code }}" alt="Código QR" style="width: 150px; height: 150px;">
+  </div>
+
 {% endblock %}
