@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+  <style>
+    .pdf {
+      margin: 0 auto;
+      /* Centra horizontalmente el contenedor */
+      width: 80%;
+      /* Anchura del contenedor */
+      padding: 50px;
+      /* Padding de 50px en todos los lados */
+      box-sizing: border-box;
+      /* Incluye el padding en el ancho total */
+    }
+  
+    .pdf iframe {
+      width: 100%;
+      /* Asegura que el iframe ocupe todo el ancho del contenedor */
+      height: 600px;
+      /* Altura del iframe */
+      border: none;
+      /* Elimina el borde del iframe */
+      zoom: 1;
+    }
+  </style>
+<div class="pdf">
+  <iframe src="{% static 'pdf/0002-IC.pdf' %}" type="application/pdf" frameborder="0"></iframe>
+</div>
+{% endblock %}
